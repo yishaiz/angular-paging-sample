@@ -1,0 +1,65 @@
+<div>
+
+  <!--//todo: change to position - absolute-->
+  <div class="div-spinner">
+    <img id="spinner" [hidden]="!isLoading" src="../../Images/spinner.gif"/>
+  </div>
+
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li>
+        <button (click)="onClickPrev()" class="navigation-button">
+          <span class="glyphicon glyphicon-menu-left"></span>
+        </button>
+      </li>
+
+      <li *ngFor="let book of books">
+        <button (click)="setBookByName(book)" class="navigation-button">
+          {{book}}
+        </button>
+      </li>
+
+      <li>
+        <button (click)="onClickNext()" class="navigation-button">
+          <span class="glyphicon glyphicon-menu-right"></span>
+        </button>
+      </li>
+
+
+      <li>
+        <a href="#" (click)="onClickPrev()">
+          <span class="glyphicon glyphicon-menu-left"></span>
+        </a>
+      </li>
+
+      <li *ngFor="let book of books">
+        <a href="#" (click)="setBookByName(book  )">
+          {{book }}
+        </a>
+      </li>
+
+      <li>
+        <a href="#" (click)="onClickNext()">
+          <span class="glyphicon glyphicon-menu-right"></span>
+        </a>
+      </li>
+
+
+    </ul>
+  </nav>
+
+  <div class="row message">
+    <div [hidden]=!isDisplayMessage [ngClass]="{'alert' : isDisplayError  }">{{message}}</div>
+  </div>
+
+  <div class="books-counter">{{(currentBookIndex + 1) + "/" + totalBooks}}</div>
+
+
+  <div class="books-container">
+
+    <div *ngFor="let book of books; let i = index" [ngStyle]="getItemStyle()" class="book-container">
+      <app-book [bookName]="book"></app-book>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.main {
+  width: 400px;
+}
+
+span#delay {
+  margin-left: 30px;
+  font-weight: bold;
+}
+
+h3 {
+  color: #5afcfc;
+  text-align: center;
+}
+
+span#delay {
+  color: white;
+}
+
+#save-changes {
+  display: inline-block;
+  margin-left: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  color: blue;
+}
+
+input.delay{
+  text-align:center;
+}
